@@ -1,0 +1,135 @@
+.ms-popup-add-edit-post-window-container {
+    position: absolute;
+    display: none;
+    top: 310px;
+    width: calc(100% - 40px);
+    max-width: 750px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    background-color: $white;
+    border: 1px solid $dark;
+    font-family: $font-comic-sans;
+    font-size: 0.8rem;
+    &.ms-open {
+        display: block;
+    }
+    // Header bar
+    .ms-add-edit-post-header-bar-wrapper {
+        font-weight: bold;
+        background-color: $gray;
+        border-bottom: 1px solid $dark;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 0 0 5px;
+        .ms-add-edit-bar-btns-container {
+            display: flex;
+            justify-content: space-between;
+            span {
+                position: relative;
+                display: inline-block;
+                width: 21px;
+                height: 21px;
+                background-color: $white;
+                border: 1px solid $dark;
+                border-radius: 3px;
+                margin: 3px;
+                -moz-box-shadow: inset 0 0 2px #000000;
+                -webkit-box-shadow: inset 0 0 2px #000000;
+                box-shadow: inset 0 0 2px #000000;
+                cursor: pointer;
+                &:after {
+                    position: absolute;
+                    content: "";
+                    width: 11px;
+                    height: 11px;
+                    left: 4px;
+                    top: 4px;
+                }
+            }
+            .ms-line-btn {
+                &:after {
+                    border-bottom: 1px solid $dark;
+                }
+            }
+            .ms-square-btn {
+                &:after {
+                    border: 1px solid $dark;
+                }
+            }
+            .ms-x-btn {
+                &:after {
+                    display: none;
+                }
+                span {
+                    &:after {
+                        display: none;
+                    }
+                    @extend %x-sides;
+                    width: 14px;
+                    left: -0.6px;
+                    &:nth-child(1),
+                    &:nth-child(4) {
+                        display: none;
+                    }
+                    &:nth-child(2),
+                    &:nth-child(3) {
+                        top: 5px;
+                    }
+                }
+            }
+        }
+    }
+    // Add/Edit post content container
+    .ms-add-edit-post-content-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 10px 10px;
+        .ms-post-title-container,
+        .ms-post-text-container,
+        .ms-post-cancel-btns-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            position: relative;
+            margin-bottom: 10px;
+                &:after {
+                    position: absolute;
+                    display: none;
+                    content: "*";
+                    top: 5px;
+                    right: 8%;
+                    color: red;
+                }
+                &.ms-empty {
+                    &:after {
+                        display: block;
+                    }
+                }
+            label {
+                font-weight: bold;
+                margin-right: 10px;
+            }
+            input,
+            textarea {
+                width: 75%;
+                border: 1px solid $dark;
+            }
+        }
+        .ms-post-cancel-btns-container {
+            &:after {
+                display: none;
+            }
+            .ms-post-btn,
+            .ms-cancel-btn {
+                @extend %dark-btn;
+                padding: 2px 20px;
+                margin: 20px 10px 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+.ms-blog-intro-container {
+    .ms-blog-intro-wrapper {
+        @media screen and (min-width: 769px) {
+            left: 20%;
+            position: relative;
+            width: calc(100% - 20% - 30px);
+            margin: 10px 20px 20px 10px;
+        }
+        // Intro Title
+        h1 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        // Intro Box
+        .ms-my-blog-container {
+            border: 1px solid $dark;
+            background-color: $gray;
+            padding: 10px;
+            @extend %close-btn-container;
+            p {
+                padding: 15px 10px;
+                font-size: 0.8rem;
+                font-family: $font-comic-sans;
+            }
+        }
+        // BLOG Btn
+        .ms-add-new-blog-post-btn-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 10px;
+            .ms-add-new-blog-post-btn {
+                @extend %dark-btn;
+            }
+        }
+    }
+}

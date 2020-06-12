@@ -1,0 +1,99 @@
+.ms-blog-header {
+    background-color: $dark;
+    font-family: $font-comic-sans;
+    position: relative;
+    nav {
+        // Left side
+        .ms-blog-title-container {
+            color: $white;
+            font-size: 0.9rem;
+            margin-left: 5px;
+        }
+        // Right side
+        .ms-blog-search-nav-container {
+            display: flex;
+            // Search
+            .ms-blog-search-container {
+                margin-right: 20px;
+                @media screen and (min-width: 769px) {
+                    margin-right: 0;
+                }
+                input {
+                    border-radius: 0;
+                    background-clip: unset;
+                    height: 22px;
+                    line-height: 22px;
+                    font-size: 0.7rem;
+                    padding: 3px;
+                    color: $dark;
+                }
+            }
+            // Mobile: nav toggle btn
+            .ms-mobile-nav-toggle-btn {
+                @media screen and (min-width: 769px) {
+                    display: none;
+                }
+                .ms-nav-toggle-btn-line {
+                    background-color: $white;
+                    display: block;
+                    width: 40px;
+                    height: 2px;
+                    margin: 3px 0;
+                }
+            }
+            // Navigation
+            .ms-blog-nav-container {
+                position: absolute;
+                top: 49px;
+                left: -100%;
+                width: 45%;
+                height: 100vh;
+                overflow: auto;
+                margin: 0;
+                box-sizing: border-box;
+                -webkit-transition: all 0.3s ease-in-out;
+                -moz-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+                -webkit-box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.5);
+                -moz-box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.5);
+                box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.5);
+                @media screen and (max-width: 768px) {
+                    background-color: $white;
+                    z-index: 10;
+                    &.ms-open {
+                        -webkit-transition: all 0.3s ease-in-out;
+                        -moz-transition: all 0.3s ease-in-out;
+                        transition: all 0.3s ease-in-out;
+                        left: -15px;
+                    }
+                }
+                @media screen and (max-width: 398px) {
+                    top: 80px;
+                }
+                @media screen and (min-width: 769px) {
+                    display: block;
+                    position: static;
+                    height: auto;
+                    width: auto;
+                }
+                ul {
+                    @media screen and (min-width: 769px) {
+                        flex-direction: row;
+                    }
+                    li {
+                        a {
+                            color: $dark;
+                            padding: 8px 12px;
+                            text-decoration: underline;
+                            font-size: 0.9rem;
+                            @media screen and (min-width: 769px) {
+                                color: $white;
+                                padding: 8px 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

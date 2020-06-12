@@ -1,0 +1,132 @@
+.ms-main-blog-page-content {
+    @media screen and (min-width: 769px) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    // Aside
+    .ms-main-blog-page-sidebar {
+        border: 1px solid $dark;
+        @media screen and (min-width: 769px) {
+            margin: 0 10px;
+            width: calc(20% - 20px);
+            height: 100vh;
+        }
+        h2 {
+            margin: 5px 20px;
+            text-align: center;
+            @media screen and (min-width: 769px) {
+                text-align: left;
+            }
+        }
+        .ms-categories-nav-container {
+            ul {
+                display: flex;
+                flex-direction: row;
+                margin: 5px 20px 15px;
+                flex-wrap: wrap;
+                @media screen and (min-width: 769px) {
+                    display: block;
+                }
+                li {
+                    margin-right: 10px;
+                    a {
+                        color: blue;
+                        font-size: 0.8rem;
+                        font-family: $font-comic-sans;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+    // Article section
+    .ms-main-blog-page-posts-container {
+        @media screen and (min-width: 769px) {
+            width: calc(100% - 20% - 30px);
+            display: inline-block;
+            margin: 0 20px 20px 10px;
+        }
+        // POST
+        article {
+            border: 1px solid $dark;
+            padding: 10px 20px 20px;
+            margin-bottom: 20px;
+            &:nth-child(odd) {
+                background-color: $gray;
+            }
+            // Post header
+            .ms-post-header {
+                display: flex;
+                flex-wrap: wrap;
+                .ms-image-container {
+                    display: inline-block;
+                    .ms-image-wrapper {
+                        display: inline-block;
+                        border: 1px solid $dark;
+                        img {
+
+                        }
+                    }
+                }
+                .ms-title-data {
+                    display: inline-block;
+                    width: calc(100% - 242px);
+                    padding: 0 10px;
+                    @media screen and (max-width: 560px) {
+                        width: calc(100% - 82px);
+                    }
+                    .ms-post-title {
+                        
+                    }
+                    .ms-post-creation-data-container {
+                        font-family: $font-comic-sans;
+                        font-size: 0.8rem;
+                    }
+                }
+                .ms-post-action-buttons-container {
+                    display: inline-block;
+                    @media screen and (max-width: 560px) {
+                        display: block;
+                        margin: 10px 0;
+                    }
+                    .ms-post-edit,
+                    .ms-post-delete {
+                        @extend %dark-btn;
+                        padding: 2px 20px;
+                    }
+                    .ms-post-edit {
+                        margin-right: 10px;
+                    }
+                }
+            }
+            // Post content
+            .ms-post-content-container {
+                .ms-post-txt-wrapper {
+                    margin: 5px 0 15px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    height: 95px;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 4;
+                    -webkit-box-orient: vertical;
+                }
+                .ms-post-image-container {
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    @media screen and (max-width: 560px) {
+                        justify-content: space-evenly;
+                    }
+                    img {
+                        display: inline-block;
+                        border: 1px solid $dark;
+                        margin: 0 10px;
+                        @media screen and (max-width: 560px) {
+                            margin: 8px 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
