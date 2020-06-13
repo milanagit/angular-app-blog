@@ -11,6 +11,9 @@ import { BlogmainComponent } from './pages/blogpostpage/blogmain/blogmain.compon
 import { AddeditpopupComponent } from './pages/blogpostpage/addeditpopup/addeditpopup.component';
 import { PostsComponent } from './pages/blogpostpage/blogmain/posts/posts.component';
 import { PostComponent } from './pages/blogpostpage/blogmain/posts/post/post.component';
+import { AppService } from './app.service';
+import { FormsModule } from '@angular/forms';
+import { PopupComponent } from './pages/blogpostpage/addeditpopup/popup/popup.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +24,15 @@ import { PostComponent } from './pages/blogpostpage/blogmain/posts/post/post.com
     BlogmainComponent,
     AddeditpopupComponent,
     PostsComponent,
-    PostComponent
+    PostComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [AppService, PostComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

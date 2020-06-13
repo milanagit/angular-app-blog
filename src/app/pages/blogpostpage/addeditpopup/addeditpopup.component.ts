@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from 'src/app/app.service';
+import { Popup } from './popup/popup';
 
 @Component({
   selector: 'app-addeditpopup',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddeditpopupComponent implements OnInit {
 
-  constructor() { }
+  public addeditpopup: Array<Popup>;
+
+  constructor(private appService: AppService) {
+    
+  }
 
   ngOnInit(): void {
+    this.addeditpopup = this.appService.addeditpopup;
   }
 
 }

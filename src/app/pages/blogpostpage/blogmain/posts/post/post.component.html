@@ -1,4 +1,4 @@
-<article>
+<article *ngIf="deletePostAction === false;">
     <!-- Post header -->
     <div class="ms-post-header">
         <div class="ms-image-container">
@@ -7,21 +7,21 @@
             </div>
         </div>
         <div class="ms-title-data">
-            <h2 class="ms-post-title">{{ title }}</h2>
+            <h2 class="ms-post-title">{{ title.editTitle }}</h2>
             <div class="ms-post-creation-data-container">
-                Posted date: <span class="ms-post-date">12.12.2019.</span> at <span class="ms-post-time">12:00</span> by <span class="ms-creator">Some person {{ id }}</span>
+                Posted date: <span class="ms-post-date">12.12.2019.</span> at <span class="ms-post-time">12:00</span> by <span class="ms-creator">Some person {{ id.editId }}</span>
             </div>
         </div>
         <div class="ms-post-action-buttons-container">
-            <button class="ms-post-edit">Edit</button>
-            <button class="ms-post-delete">Delete</button>
+            <button class="ms-post-edit" (click)="editPost()">Edit</button>
+            <button class="ms-post-delete" (click)="deletePost()">Delete</button>
         </div>
     </div>
 
     <!-- Post content -->
     <div class="ms-post-content-container">
         <div class="ms-post-txt-wrapper">
-            {{ text }}
+            {{ text.editText }}
         </div>
         <div class="ms-post-image-container">
             <img src="https://via.placeholder.com/100/FFFFFF/000000?Text=WebsiteBuilders.com" alt="">

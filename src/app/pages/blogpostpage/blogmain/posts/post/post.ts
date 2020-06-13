@@ -1,5 +1,7 @@
+import { Popup } from 'src/app/pages/blogpostpage/addeditpopup/popup/popup';
+
 export interface Post {
-    id: number;
-    title: string;
-    text: string;
+    id: Popup;
+    title: Popup;
+    text: Popup;
 }
