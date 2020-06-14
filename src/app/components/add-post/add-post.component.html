@@ -1,11 +1,11 @@
-<div *ngIf="editPostPopupp === true;" class="ms-popup-add-edit-post-window-container">
+<form (ngSubmit)="onSubmit()" class="ms-popup-add-edit-post-window-container">
     <!-- Header bar -->
     <div class="ms-add-edit-post-header-bar-wrapper">
-        Add/Edit blog post
+        Add blog post
         <div class="ms-add-edit-bar-btns-container">
             <span class="ms-line-btn"></span>
             <span class="ms-square-btn"></span>
-            <span class="ms-x-btn">
+            <span class="ms-x-btn" (click)="closeAddPostMenu()">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -14,23 +14,19 @@
         </div>
     </div>
 
-    <!-- Add/Edit post content container -->
+    <!-- Add post content container -->
     <div class="ms-add-edit-post-content-wrapper">
         <div class="ms-post-title-container">
             <label for="title">Title</label>
-            <input type="text" [(ngModel)]="editTitle" name="title" placeholder="Title of the post">
+            <input [(ngModel)]="title" type="text" name="title" placeholder="Title of the post">
         </div>
         <div class="ms-post-text-container">
             <label for="text">Text</label>
-            <textarea [(ngModel)]="editText" name="text" id="ms-post-text" cols="30" rows="10" placeholder="Text of the post"></textarea>
+            <textarea [(ngModel)]="body" name="text" id="ms-post-text" cols="30" rows="10" placeholder="Text of the post"></textarea>
         </div>
         <div class="ms-post-cancel-btns-container">
-            <button class="ms-post-btn" (click)="saveChanges()">Post</button>
-            <button class="ms-cancel-btn" (click)="exitEditPost()">Cancel</button>
+            <button type="submit" class="ms-post-btn">Post</button>
+            <button class="ms-cancel-btn" (click)="closeAddPostMenu()">Cancel</button>
         </div>
     </div>
-</div>
-
-<div *ngIf="test === true;">
-    <button (click)="testRes()"></button>
-</div>
+</form>

@@ -1,1 +1,90 @@
-<app-blogpostpage></app-blogpostpage>
+<div class="ms-blog-posts-page">
+  <!-- HEADER -->
+  <header class="ms-blog-header container-fluid">
+      <nav class="navbar navbar-light">
+          <a class="navbar-brand ms-blog-title-container">My Blog</a>
+
+          <div class="ms-blog-search-nav-container">
+              <form class="form-inline ms-blog-search-container">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              </form>
+
+              <button class="navbar-toggler ms-mobile-nav-toggle-btn" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="ms-nav-toggle-btn-line"></span>
+                  <span class="ms-nav-toggle-btn-line"></span>
+                  <span class="ms-nav-toggle-btn-line"></span>
+                  <span class="ms-nav-toggle-btn-line"></span>
+              </button>
+
+              <div class="navbar-collapse ms-blog-nav-container">
+                  <ul class="navbar-nav">
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">Link 1</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">Link 2</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">Link 3</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">My Profile</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">Logout</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+  </header>
+
+  <!-- BLOG INTRO CONTAINER -->
+  <section class="ms-blog-intro-container">
+      <div class="ms-blog-intro-wrapper">
+          <h1>Welcome to My Blog</h1>
+          <div class="ms-my-blog-container">
+              <div class="ms-close-btn-wrapper">
+                  <span class="ms-close-btn">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                  </span>
+              </div>
+              <p>Container for showing application messages</p>
+          </div>
+      </div>
+  </section>
+
+  <!-- BLOG MAIN CONTENT -->
+  <main class="ms-main-blog-page-content">
+      <!-- Aside -->
+      <aside class="ms-main-blog-page-sidebar">
+          <h2>Blog categories</h2>
+          <nav class="navbar-collapse ms-categories-nav-container">
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Category 1</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Category 2</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Category 3</a>
+                  </li>
+              </ul>
+          </nav>
+      </aside>
+      <!-- Article section -->
+      <section class="ms-main-blog-page-posts-container">
+        <router-outlet></router-outlet>
+      </section>
+  </main>
+
+  <!-- ADD/EDIT BLOG POST POPUP -->
+  
+
+  <!-- OVERLAY -->
+  <div class="ms-overlay"></div>
+</div>

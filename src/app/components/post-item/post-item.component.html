@@ -1,0 +1,67 @@
+<!-- POST -->
+<article class="ms-post-card-container">
+    <!-- Post header -->
+    <div class="ms-post-header">
+        <div class="ms-image-container">
+            <div class="ms-image-wrapper">
+                <img src="https://via.placeholder.com/80/FFFFFF/000000?Text=WebsiteBuilders.com" alt="">
+            </div>
+        </div>
+        <div class="ms-title-data">
+            <h2 class="ms-post-title">{{ post.title }}</h2>
+            <div class="ms-post-creation-data-container">
+                Posted date: <span class="ms-post-date">12.12.2019.</span> at <span class="ms-post-time">12:00</span> by <span class="ms-creator">Some person {{ post.id }}</span>
+            </div>
+        </div>
+        <div class="ms-post-action-buttons-container">
+            <button class="ms-post-edit" (click)="onEdit(post)">Edit</button>
+            <button class="ms-post-delete" (click)="onDelete(post)">Delete</button>
+        </div>
+    </div>
+
+    <!-- Post content -->
+    <div class="ms-post-content-container">
+        <div class="ms-post-txt-wrapper">
+            {{ post.body }}
+        </div>
+        <div class="ms-post-image-container">
+            <img src="https://via.placeholder.com/100/FFFFFF/000000?Text=WebsiteBuilders.com" alt="">
+            <img src="https://via.placeholder.com/100/FFFFFF/000000?Text=WebsiteBuilders.com" alt="">
+            <img src="https://via.placeholder.com/100/FFFFFF/000000?Text=WebsiteBuilders.com" alt="">
+        </div>
+    </div>
+</article>
+
+<!-- EDIT BLOG POST POPUP -->
+<form class="ms-popup-add-edit-post-window-container ms-add-post-container" *ngIf="editMenuOpened === true;">
+    <!-- Header bar -->
+    <div class="ms-add-edit-post-header-bar-wrapper">
+        Edit blog post
+        <div class="ms-add-edit-bar-btns-container">
+            <span class="ms-line-btn"></span>
+            <span class="ms-square-btn"></span>
+            <span class="ms-x-btn" (click)="onCloseEditPostContainer()">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </div>
+    </div>
+
+    <!-- EDIT post content container -->
+    <div class="ms-add-edit-post-content-wrapper">
+        <div class="ms-post-title-container">
+            <label for="title">Title</label>
+            <input [(ngModel)]="post.title" type="text" name="title" placeholder="Title of the post">
+        </div>
+        <div class="ms-post-text-container">
+            <label for="text">Text</label>
+            <textarea [(ngModel)]="post.body" name="text" id="ms-post-text" cols="30" rows="10" placeholder="Text of the post"></textarea>
+        </div>
+        <div class="ms-post-cancel-btns-container">
+            <button class="ms-post-btn">Post</button>
+            <button class="ms-cancel-btn" (click)="onCloseEditPostContainer()">Cancel</button>
+        </div>
+    </div>
+</form>

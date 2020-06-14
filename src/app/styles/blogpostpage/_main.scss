@@ -6,6 +6,7 @@
     // Aside
     .ms-main-blog-page-sidebar {
         border: 1px solid $dark;
+        margin-bottom: 46px;
         @media screen and (min-width: 769px) {
             margin: 0 10px;
             width: calc(20% - 20px);
@@ -41,19 +42,42 @@
     }
     // Article section
     .ms-main-blog-page-posts-container {
+        position: relative;
         @media screen and (min-width: 769px) {
             width: calc(100% - 20% - 30px);
             display: inline-block;
             margin: 0 20px 20px 10px;
         }
+        app-posts {
+            app-post-item {
+                &:nth-child(odd) {
+                    .ms-post-card-container {
+                        background-color: $gray;
+                    }
+                }
+            }
+        }
+        // Add post btn
+        .ms-add-new-blog-post-btn-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 10px;
+            position: absolute;
+            right: 0;
+            top: -45px;
+            @media screen and (min-width: 769px) {
+                top: -70px;
+            }
+            .ms-add-new-blog-post-btn {
+                @extend %dark-btn;
+            }
+        }
         // POST
-        article {
+        .ms-post-card-container {
             border: 1px solid $dark;
             padding: 10px 20px 20px;
             margin-bottom: 20px;
-            &:nth-child(odd) {
-                background-color: $gray;
-            }
+            text-transform: capitalize;
             // Post header
             .ms-post-header {
                 display: flex;

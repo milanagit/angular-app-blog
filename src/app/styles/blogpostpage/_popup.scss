@@ -1,11 +1,11 @@
 .ms-popup-add-edit-post-window-container {
     position: absolute;
     // display: none;
-    top: 310px;
-    width: calc(100% - 40px);
+    top: -10px;
+    width: calc(100% + 10px);
     max-width: 750px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 37.5%;
+    transform: translateX(-37.5%);
     z-index: 20;
     background-color: $white;
     border: 1px solid $dark;
